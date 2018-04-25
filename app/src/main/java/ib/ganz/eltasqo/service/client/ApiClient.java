@@ -13,8 +13,8 @@ import retrofit2.Retrofit;
 public class ApiClient
 {
     public static String IP = "http://192.168.23.1/";
-    private static String BASE_URL = IP + "wiskul/api/";
-    public static String IMG_DIR = IP + "wiskul/admin/images/";
+    private static String BASE_URL = IP + "el_tasqo/";
+    public static String IMG_DIR = IP + "el_tasqo/images/";
 
     private static Retrofit retrofit;
 
