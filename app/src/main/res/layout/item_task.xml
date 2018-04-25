@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="7dp">
+
+            <TextView
+                android:id="@+id/txtStatus"
+                android:text="Pending"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RatingBar
+                android:id="@+id/rbTask"
+                android:layout_toLeftOf="@+id/btnMore"
+                android:layout_alignParentTop="true"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/btnMore"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_more_vert_black_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/l1"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/rbTask"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginRight="7dp"
+                    android:tint="@color/colorPrimary"
+                    android:src="@drawable/ic_assignment_black_24dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"/>
+
+                <TextView
+                    android:id="@+id/txtJudul"
+                    android:text="Judul Task ini ya !!"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/l1"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginRight="7dp"
+                    android:tint="@color/colorPrimary"
+                    android:src="@drawable/ic_child_care_black_24dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"/>
+
+                <TextView
+                    android:id="@+id/txtNamaUser"
+                    android:text="Nama"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
