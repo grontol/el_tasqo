@@ -25,6 +25,7 @@
             <RatingBar
                 android:id="@+id/rbTask"
                 android:layout_toLeftOf="@+id/btnMore"
+                android:isIndicator="true"
                 android:layout_alignParentTop="true"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
@@ -62,6 +63,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ctrNama"
                 android:layout_marginTop="5dp"
                 android:layout_below="@+id/l1"
                 android:gravity="center_vertical"

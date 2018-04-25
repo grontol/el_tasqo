@@ -6,14 +6,14 @@ import android.os.Bundle;
  * Created by limakali on 4/25/2018.
  */
 
-public class GeneralFragment extends BaseFragment
+public class UnassignedFragment extends BaseFragment
 {
-    public static GeneralFragment create(int kind)
+    public static UnassignedFragment create(int kind)
     {
         Bundle b = new Bundle();
         b.putInt("kind", kind);
 
-        GeneralFragment g = new GeneralFragment();
+        UnassignedFragment g = new UnassignedFragment();
         g.setArguments(b);
 
         return g;

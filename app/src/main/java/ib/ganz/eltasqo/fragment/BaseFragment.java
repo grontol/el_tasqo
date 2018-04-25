@@ -19,8 +19,9 @@ import ib.ganz.eltasqo.R;
 
 public class BaseFragment extends Fragment
 {
-    public static final int GENERAL = 0;
-    public static final int ONLYYOU = 1;
+    public static final int UNASSIGNED = 0;
+    public static final int ASSIGNED = 1;
+    public static final int MYASSIGNMENT = 2;
 
     @BindView(R.id.lvTask)  ListView lvTask;
     @BindView(R.id.btnAdd)  FloatingActionButton btnAdd;

@@ -14,6 +14,7 @@ import ib.ganz.eltasqo.activity.baseactivity.BaseActivity;
 import ib.ganz.eltasqo.dataclass.UserData;
 import ib.ganz.eltasqo.helper.DialogManager;
 import ib.ganz.eltasqo.helper.ListUserDialog;
+import ib.ganz.eltasqo.helper.SessionManager;
 import ib.ganz.eltasqo.service.Servize;
 
 public class LoginActivity extends BaseActivity
@@ -30,6 +31,12 @@ public class LoginActivity extends BaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+
+        if (SessionManager.isLogin())
+        {
+            MainActivity.go(this);
+            return;
+        }
 
         lUser = new ArrayList<>();
 

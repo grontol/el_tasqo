@@ -19,6 +19,15 @@ public class DialogManager
                 .show();
     }
 
+    public static void okCancel(Activity a, String s, OkCancel o)
+    {
+        new AlertDialog.Builder(a)
+                .setMessage(s)
+                .setPositiveButton("Ok", (dialogInterface, i) -> o.onOk())
+                .setNegativeButton("Cancel", null)
+                .show();
+    }
+
     public interface OkCancel
     {
         void onOk();
