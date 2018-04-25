@@ -3,6 +3,7 @@ package ib.ganz.eltasqo.service;
 import java.util.List;
 
 import ib.ganz.eltasqo.dataclass.BagianData;
+import ib.ganz.eltasqo.dataclass.BaseResponse;
 import ib.ganz.eltasqo.dataclass.TaskData;
 import ib.ganz.eltasqo.dataclass.UserData;
 import io.reactivex.Observable;
@@ -49,7 +50,7 @@ public interface ElTasqoService
     
     @POST("delete_task.php")
     @FormUrlEncoded
-    Observable<Object> deleteTask(@Field("id_task") String idTask);
+    Observable<BaseResponse> deleteTask(@Field("id_task") String idTask);
     
     @POST("update_task_status.php")
     @FormUrlEncoded

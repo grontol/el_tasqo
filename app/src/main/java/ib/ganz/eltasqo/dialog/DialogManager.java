@@ -1,6 +1,7 @@
-package ib.ganz.eltasqo.helper;
+package ib.ganz.eltasqo.dialog;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 
@@ -19,7 +20,7 @@ public class DialogManager
                 .show();
     }
 
-    public static void okCancel(Activity a, String s, OkCancel o)
+    public static void okCancel(Context a, String s, OkCancel o)
     {
         new AlertDialog.Builder(a)
                 .setMessage(s)

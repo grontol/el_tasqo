@@ -1,5 +1,7 @@
 package ib.ganz.eltasqo.dataclass;
 
+import android.graphics.Color;
+
 import com.google.gson.annotations.SerializedName;
 
 import ib.ganz.eltasqo.helper.SessionManager;
@@ -79,5 +81,12 @@ public class TaskData
         return getIdUser() == null ? UNASSIGNED :
                 !getIdUser().equalsIgnoreCase(SessionManager.getIdUser()) ? ASSIGNED :
                         MYASSIGNMENT;
+    }
+
+    public int getColorStatus()
+    {
+        return getStatus().equals(PENDING) ? Color.parseColor("#cc0052") :
+                getStatus().equals(PROSES) ? Color.parseColor("#ffd11a") :
+                        Color.parseColor("#2eb82e");
     }
 }

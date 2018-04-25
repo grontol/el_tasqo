@@ -19,6 +19,10 @@
         </activity>
         <activity android:name=".activity.MainActivity">
         </activity>
+        <activity android:name=".activity.AddTaskActivity">
+        </activity>
+        <activity android:name=".activity.DetailTaskActivity">
+        </activity>
     </application>
 
 </manifest>

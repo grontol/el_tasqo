@@ -1,4 +1,4 @@
-package ib.ganz.eltasqo.helper;
+package ib.ganz.eltasqo.dialog;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -17,29 +17,30 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ib.ganz.eltasqo.R;
-import ib.ganz.eltasqo.dataclass.UserData;
+import ib.ganz.eltasqo.dataclass.BagianData;
+import ib.ganz.eltasqo.helper.Gxon;
 import ib.ganz.eltasqo.service.Servize;
 import io.reactivex.disposables.CompositeDisposable;
 
 /**
- * Created by limakali on 4/21/2018.
+ * Created by limakali on 4/25/2018.
  */
 
-public class ListUserDialog extends DialogFragment
+public class ListBagianDialog extends DialogFragment
 {
     @BindView(R.id.lvItemDialog)    ListView lvItemDialog;
     @BindView(R.id.ctrLoading)      View ctrLoading;
 
     CompositeDisposable c;
-    List<UserData> l;
-    ArrayAdapter<UserData> adp;
+    List<BagianData> l;
+    ArrayAdapter<BagianData> adp;
 
-    public static <T> ListUserDialog create(List<UserData> l)
+    public static <T> ListBagianDialog create(List<BagianData> l)
     {
         Bundle b = new Bundle();
         b.putString("l", Gxon.toJsonArray(l));
 
-        ListUserDialog d = new ListUserDialog();
+        ListBagianDialog d = new ListBagianDialog();
         d.setArguments(b);
 
         return d;
@@ -50,7 +51,7 @@ public class ListUserDialog extends DialogFragment
     public Dialog onCreateDialog(Bundle savedInstanceState)
     {
         c = new CompositeDisposable();
-        l = Gxon.fromJsonArray(getArguments().getString("l"), UserData.class);
+        l = Gxon.fromJsonArray(getArguments().getString("l"), BagianData.class);
         adp = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, l);
 
         View v = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_list, null);
@@ -61,7 +62,7 @@ public class ListUserDialog extends DialogFragment
         if (l.isEmpty())
         {
             ctrLoading.setVisibility(View.VISIBLE);
-            c.add(Servize.getUser().subscribe(r ->
+            c.add(Servize.getBagian().subscribe(r ->
             {
                 ctrLoading.setVisibility(View.GONE);
                 l.clear();
@@ -94,14 +95,14 @@ public class ListUserDialog extends DialogFragment
         }
     }
 
-    public void show(FragmentManager manager, OnSelectedUser o)
+    public void show(FragmentManager manager, OnSelectedBagian o)
     {
         super.show(manager, "u");
         lvItemDialog.setOnItemClickListener((av, v, i, lo) -> o.onSelected(l.get(i)));
     }
 
-    public interface OnSelectedUser
+    public interface OnSelectedBagian
     {
-        void onSelected(UserData u);
+        void onSelected(BagianData u);
     }
 }

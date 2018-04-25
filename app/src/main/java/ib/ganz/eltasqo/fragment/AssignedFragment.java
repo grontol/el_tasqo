@@ -1,6 +1,9 @@
 package ib.ganz.eltasqo.fragment;
 
-import android.os.Bundle;
+import java.util.ArrayList;
+import java.util.List;
+
+import ib.ganz.eltasqo.dataclass.TaskData;
 
 /**
  * Created by limakali on 4/25/2018.
@@ -8,14 +11,25 @@ import android.os.Bundle;
 
 public class AssignedFragment extends BaseFragment
 {
-    public static AssignedFragment create(int kind)
+    public static AssignedFragment create()
     {
-        Bundle b = new Bundle();
-        b.putInt("kind", kind);
+        return new AssignedFragment();
+    }
 
-        AssignedFragment g = new AssignedFragment();
-        g.setArguments(b);
+    @Override
+    protected void filterData()
+    {
+        List<TaskData> lTemp = new ArrayList<>();
+        lTemp.addAll(lTask);
 
-        return g;
+        lTask.clear();
+
+        for (TaskData t : lTemp)
+        {
+            if (t.getAssignment() == TaskData.ASSIGNED)
+            {
+                lTask.add(t);
+            }
+        }
     }
 }

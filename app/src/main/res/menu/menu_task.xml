@@ -5,4 +5,16 @@
         android:id="@+id/mn_assign"
         android:title="Assign to..."/>
 
+    <item
+        android:id="@+id/mn_edit"
+        android:title="Edit task"/>
+
+    <item
+        android:id="@+id/mn_delete"
+        android:title="Delete task"/>
+
+    <item
+        android:id="@+id/mn_status"
+        android:title="Change status"/>
+
 </menu>

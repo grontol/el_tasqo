@@ -3,6 +3,7 @@ package ib.ganz.eltasqo.service;
 import java.util.List;
 
 import ib.ganz.eltasqo.dataclass.BagianData;
+import ib.ganz.eltasqo.dataclass.BaseResponse;
 import ib.ganz.eltasqo.dataclass.TaskData;
 import ib.ganz.eltasqo.dataclass.UserData;
 import ib.ganz.eltasqo.helper.Develop;
@@ -61,7 +62,7 @@ public class Servize
                 .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
     
-    public static Observable<Object> deleteTask(String idTask)
+    public static Observable<BaseResponse> deleteTask(String idTask)
     {
         return getService().deleteTask(idTask)
                 .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());

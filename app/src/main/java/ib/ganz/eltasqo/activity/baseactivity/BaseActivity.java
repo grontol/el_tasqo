@@ -54,7 +54,7 @@ public class BaseActivity extends AppCompatActivity
 
     public void makeToastPeriksaKoneksi()
     {
-        makeToast("Periksa koneksi Anda!");
+        makeToast("EEiittss, Periksa koneksi Anda!");
     }
 
     public void showProgressDialog()

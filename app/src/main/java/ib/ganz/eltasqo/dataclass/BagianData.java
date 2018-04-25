@@ -26,4 +26,10 @@ public class BagianData
     {
         return warna;
     }
+
+    @Override
+    public String toString()
+    {
+        return getNamaBagian();
+    }
 }

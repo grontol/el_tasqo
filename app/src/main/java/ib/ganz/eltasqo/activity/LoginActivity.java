@@ -12,8 +12,8 @@ import butterknife.ButterKnife;
 import ib.ganz.eltasqo.R;
 import ib.ganz.eltasqo.activity.baseactivity.BaseActivity;
 import ib.ganz.eltasqo.dataclass.UserData;
-import ib.ganz.eltasqo.helper.DialogManager;
-import ib.ganz.eltasqo.helper.ListUserDialog;
+import ib.ganz.eltasqo.dialog.DialogManager;
+import ib.ganz.eltasqo.dialog.ListDialog;
 import ib.ganz.eltasqo.helper.SessionManager;
 import ib.ganz.eltasqo.service.Servize;
 
@@ -40,13 +40,19 @@ public class LoginActivity extends BaseActivity
 
         lUser = new ArrayList<>();
 
-        edtNama.setOnClickListener(x -> ListUserDialog.create(lUser).show(getSupportFragmentManager(), u -> selectedUser = u));
-        btnLogin.setOnClickListener(x -> DialogManager.confirmLogin(this, selectedUser.getNamaUser(), () -> MainActivity.go(this)));
-
-        getData();
+        edtNama.setOnClickListener(x -> ListDialog.create(lUser, getSupportFragmentManager(), this::getData, u ->
+        {
+            selectedUser = u;
+            edtNama.setText(u.getNamaUser());
+        }, UserData.class));
+        btnLogin.setOnClickListener(x -> DialogManager.confirmLogin(this, selectedUser.getNamaUser(), () ->
+        {
+            MainActivity.go(this);
+            SessionManager.login(selectedUser);
+        }));
     }
 
-    private void getData()
+    private void getData(ListDialog.OnDataLoaded o, ListDialog.OnDataError o1)
     {
         getCompositeDisposablePD().add(Servize.getUser().subscribe(r ->
         {
@@ -54,11 +60,12 @@ public class LoginActivity extends BaseActivity
 
             lUser.clear();
             lUser.addAll(r);
-            if (lUser.size() > 0) selectedUser = lUser.get(0);
+            o.onLoaded(lUser);
         }, e ->
         {
             closeProgressDialog();
             makeToastPeriksaKoneksi();
+            o1.onError();
         }));
     }
 }
