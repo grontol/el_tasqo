@@ -12,7 +12,7 @@ import retrofit2.Retrofit;
 
 public class ApiClient
 {
-    public static String IP = "http://192.168.23.1/";
+    public static String IP = "http://jadibaru.com/";
     private static String BASE_URL = IP + "el_tasqo/";
     public static String IMG_DIR = IP + "el_tasqo/images/";
 

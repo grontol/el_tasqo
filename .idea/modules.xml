@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ElTasqo.iml" filepath="$PROJECT_DIR$/ElTasqo.iml" />
+      <module fileurl="file://D:\AppProject\AndroidStudio\el_tasqo\ElTasqo.iml" filepath="D:\AppProject\AndroidStudio\el_tasqo\ElTasqo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/el_tasqo.iml" filepath="$PROJECT_DIR$/el_tasqo.iml" />
     </modules>
   </component>
 </project>
