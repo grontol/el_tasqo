@@ -13,5 +13,6 @@ public class AppQu extends Application
     {
         super.onCreate();
         SessionManager.init(this);
+        FilterManager.init(this);
     }
 }

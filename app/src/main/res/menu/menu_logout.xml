@@ -3,6 +3,18 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/mn_refresh"
+        android:icon="@drawable/ic_refresh_white_24dp"
+        app:showAsAction="always"
+        android:title="Refresh"/>
+
+    <item
+        android:id="@+id/mn_filter"
+        android:icon="@drawable/ic_youtube_searched_for_black_24dp"
+        app:showAsAction="always"
+        android:title="Filter"/>
+
+    <item
         android:id="@+id/mn_logout"
         android:icon="@drawable/ic_call_missed_outgoing_black_24dp"
         app:showAsAction="always"

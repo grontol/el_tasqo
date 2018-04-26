@@ -117,10 +117,22 @@ public class MainActivity extends BaseActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        if (item.getItemId() == R.id.mn_logout)
+        if (item.getItemId() == R.id.mn_refresh)
         {
-            DialogManager.okCancel(this, "Eeiiitttsss, anda mau logout???", this::finish);
-            SessionManager.logout();
+            getData();
+        }
+        else if (item.getItemId() == R.id.mn_filter)
+        {
+            DialogManager.filter(this);
+        }
+        else if (item.getItemId() == R.id.mn_logout)
+        {
+            DialogManager.okCancel(this, "Eeiiitttsss, anda mau logout???", () ->
+            {
+                SessionManager.logout();
+                startActivity(new Intent(this, LoginActivity.class));
+                finish();
+            });
         }
         return super.onOptionsItemSelected(item);
     }

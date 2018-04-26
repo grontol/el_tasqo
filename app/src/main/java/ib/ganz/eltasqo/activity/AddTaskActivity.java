@@ -1,6 +1,5 @@
 package ib.ganz.eltasqo.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,7 +16,6 @@ import ib.ganz.eltasqo.R;
 import ib.ganz.eltasqo.activity.baseactivity.BaseActivityBack;
 import ib.ganz.eltasqo.dataclass.BagianData;
 import ib.ganz.eltasqo.dataclass.TaskData;
-import ib.ganz.eltasqo.dialog.ListBagianDialog;
 import ib.ganz.eltasqo.dialog.ListDialog;
 import ib.ganz.eltasqo.helper.Gxon;
 import ib.ganz.eltasqo.service.Servize;
